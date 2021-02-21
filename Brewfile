@@ -15,7 +15,6 @@ brew "fdupes"           # Identify or delete duplicate files
 brew "git"              # Distributed revision control system
 brew "glances"          # Alternative to top/htop
 brew "mas"              # Mac App Store command-line interface
-brew "nvm"              # Manage multiple Node.js versions
 brew "pv"               # Monitor data's progress through a pipe
 brew "pyenv"            # Python version management
 brew "pyenv-virtualenv" # Pyenv plugin to manage virtualenv
@@ -23,6 +22,7 @@ brew "tcptraceroute"    # Traceroute implementation using TCP packets
 brew "thefuck"          # Programatically correct mistyped console commands
 brew "watch"            # Executes a program periodically, showing output fullscreen
 brew "wget"             # Internet file retriever
+brew "volta"            # Manage Node & yarn/npm versioning
 
 ################
 #    Casks     #
