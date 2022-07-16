@@ -2,11 +2,11 @@
 eval "$(ssh-agent -s)"
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
-# Symlink .zshrc
-ln -s .zshrc ~/.zshrc
-
 # Install Oh-My-ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sed '/\s*env\s\s*zsh\s*/d')"
+mv .zshrc .zshrc.backup-before-dot-files
+ln -s .zshrc ~/.zshrc
+chmod 744 ~/.oh-my-zsh/oh-my-zsh.sh
 
 # Install Brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
