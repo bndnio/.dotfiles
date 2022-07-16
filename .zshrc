@@ -105,7 +105,7 @@ alias lla="ls -la"
 function fix-xcode-command-line-tools () "sudo xcode-select --install"
 
 # ---------------- NVM CONFIG -----------------
-export NVM_DIR=/Users/brendon/.nvm
+export NVM_DIR=~/.nvm
 [ -s /usr/local/opt/nvm/nvm.sh ] && . /usr/local/opt/nvm/nvm.sh  # This loads nvm
 [ -s /usr/local/opt/nvm/etc/bash_completion.d/nvm ] && . /usr/local/opt/nvm/etc/bash_completion.d/nvm  # This loads nvm bash_completion
 
@@ -118,12 +118,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 # -- PYENV-VIRTUALENV PLUGIN --
 eval "$(pyenv virtualenv-init -)"
-
-# ---------------- POSTGRESQL CONFIG ----------
-export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
-
-# ---------------- iStat CONFIG ---------------
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # ---------------- THEFUCK CONFIG -------------
 eval $(thefuck --alias fuck)
