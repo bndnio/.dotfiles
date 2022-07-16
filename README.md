@@ -7,3 +7,4 @@
 
 ## Pre-Requisites for running setup.sh
 * ~/.ssh directory is created, and has desired `id_ed25519` key in place
+* run `chmod 744 setup.sh` in the repo to allow execution
