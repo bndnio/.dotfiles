@@ -3,8 +3,9 @@
 ################################################
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/brendon/.oh-my-zsh"
-export SSH="/Users/brendon/.ssh"
+
+export ZSH=$HOME/.oh-my-zsh
+export SSH=$HOME/.ssh
 
 # Set name of the theme to load
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -63,14 +64,12 @@ HYPHEN_INSENSITIVE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    django      #django autocomplete
     docker      #docker autocomplete
     git         #git shortcuts https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
     history     #history shortcuts (h, hs, _hsi_)
     npm         #npm autocomplete & shortcuts https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/npm
     pip         #pip autocomplete
     yarn        #yarn autocompelte
-    # zsh-pyenv   #pyenv autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -98,14 +97,14 @@ export LANG=en_CA.UTF-8
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias zshconfig="vim ~/.zshrc"
+alias zshconfig="vim $HOME/.zshrc"
 alias ohmyzshconfig="vim ~/.oh-my-zsh"
 alias ll="ls -l"
 alias lla="ls -la"
 function fix-xcode-command-line-tools () "sudo xcode-select --install"
 
 # ---------------- NVM CONFIG -----------------
-export NVM_DIR=~/.nvm
+export NVM_DIR="$HOME/.nvm"
 [ -s /usr/local/opt/nvm/nvm.sh ] && . /usr/local/opt/nvm/nvm.sh  # This loads nvm
 [ -s /usr/local/opt/nvm/etc/bash_completion.d/nvm ] && . /usr/local/opt/nvm/etc/bash_completion.d/nvm  # This loads nvm bash_completion
 

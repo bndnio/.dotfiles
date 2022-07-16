@@ -4,9 +4,13 @@ ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
 # Install Oh-My-ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sed '/\s*env\s\s*zsh\s*/d')"
-mv .zshrc .zshrc.backup-before-dot-files
+mv .zshrc .zshrc.pre-dot-files
 ln -s .zshrc ~/.zshrc
 chmod 744 ~/.oh-my-zsh/oh-my-zsh.sh
+
+# Theme Oh-My-ZSH
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH/themes/spaceship.zsh-theme"
 
 # Install Brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
