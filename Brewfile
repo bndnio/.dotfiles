@@ -28,6 +28,8 @@ brew "wget"             # Internet file retriever
 #    Casks     #
 ################
 cask "1password"
+cask "affinity-designer"
+cask "affinity-photo"
 cask "alfred"
 cask "cron"
 cask "docker"
