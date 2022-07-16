@@ -35,7 +35,7 @@ open $APPS/JetBrains\ Toolbox.app
 
 # Cleanup
 brew cleanup
-# rm -f -r /Library/Caches/Homebrew/*
+rm -f -r ~/Library/Caches/Homebrew/*
 
 # Other instructions
 echo "Follow https://gist.github.com/kevin-smets/8568070 to setup a nice terminal"
