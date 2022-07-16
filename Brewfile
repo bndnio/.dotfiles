@@ -5,6 +5,8 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "homebrew/cask-fonts"
+tap "olets/tap"
 
 ################
 #     Brew     #
@@ -44,6 +46,8 @@ cask "slack"
 cask "spotify"
 cask "visual-studio-code"
 cask "zoomus"
+cask "font-fira-code"
+cask "zsh-window-title"
 
 ################
 #     Mas      #

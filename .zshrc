@@ -70,6 +70,8 @@ plugins=(
     npm         #npm autocomplete & shortcuts https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/npm
     pip         #pip autocomplete
     yarn        #yarn autocompelte
+    zsh-autosuggestions #terminal autosuggestions
+    zsh-syntax-highlighting #terminal syntax highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,3 +128,4 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # ---------------- EXTRA SCRIPTS --------------
 
 source $SSH/certn-ssh.sh
+source /opt/homebrew/share/zsh-window-title/zsh-window-title.zsh
