@@ -1,3 +1,6 @@
+# Symlink .zshrc
+ln -s .zshrc ~/.zshrc
+
 # Install Oh-My-ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -8,26 +11,14 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
 
 # Install Brew Apps (from Brewfile)
-brew  bundle
+brew bundle
 
 ## Config nvm
 mkdir ~/.nvm
-echo '\n# -- NVM CONFIG --' >> ~/.zshrc
-echo 'export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion' >> ~/.zshrc
 
 ## Config pyenv
-echo "\n# -- PYENV CONFIG --" >> ~/.zshrc
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
 pyenv install 3.10.5
 pyenv global 3.10.5
-
-## Config pyenv virtualenv
-echo "\n# -- PYENV-VIRTUALENV CONFIG --" >> ~/.zshrc
-echo 'eval "$(pyenv virtualenv-init -)"\n' >> ~/.zshrc
 
 # Start apps that need manual config
 APPS="/Applications"
