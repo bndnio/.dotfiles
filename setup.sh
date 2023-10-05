@@ -2,21 +2,12 @@
 eval "$(ssh-agent -s)"
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
-# Install Oh-My-ZSH
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sed '/\s*env\s\s*zsh\s*/d')"
-mv .zshrc .zshrc.pre-dot-files
+# Link .zshrc here for user
 ln -s .zshrc ~/.zshrc
-chmod 744 ~/.oh-my-zsh/oh-my-zsh.sh
-
-# Theme Oh-My-ZSH
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH/themes/spaceship.zsh-theme"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Install Brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-# Prompted configuration (July 2022)
+# Prompted brew configuration (as of Oct 2023)
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -40,10 +31,6 @@ open $APPS/Docker.app
 open $APPS/Warp.app
 open $APPS/Google\ Chrome.app
 
-
 # Cleanup
 brew cleanup
 rm -f -r ~/Library/Caches/Homebrew/*
-
-# Other instructions
-echo "Follow https://gist.github.com/kevin-smets/8568070 to setup a nice terminal"
