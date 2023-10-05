@@ -21,7 +21,7 @@ export LANG=en_CA.UTF-8
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias zshconfig="vim $HOME/.zshrc"
+alias zshconfig="code $HOME/.zshrc"
 alias ll="ls -l"
 alias lla="ls -la"
 function fix-xcode-command-line-tools () "sudo xcode-select --install"
@@ -47,3 +47,6 @@ eval $(thefuck --alias fuck)
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # ---------------- EXTRA SCRIPTS --------------
+
+# Activate nice zsh window title
+source /opt/homebrew/share/zsh-window-title/zsh-window-title.zsh

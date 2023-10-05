@@ -25,6 +25,7 @@ brew "tcptraceroute"    # Traceroute implementation using TCP packets
 brew "thefuck"          # Programatically correct mistyped console commands
 brew "watch"            # Executes a program periodically, showing output fullscreen
 brew "wget"             # Internet file retriever
+brew "olets/tap/zsh-window-title" # Fix the window title
 
 ################
 #    Casks     #
