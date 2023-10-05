@@ -37,7 +37,9 @@ pyenv global 3.10.5
 APPS="/Applications"
 open $APPS/1Password.app
 open $APPS/Docker.app
-open $APPS/JetBrains\ Toolbox.app
+open $APPS/Warp.app
+open $APPS/Google\ Chrome.app
+
 
 # Cleanup
 brew cleanup

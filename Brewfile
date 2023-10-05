@@ -12,7 +12,7 @@ tap "olets/tap"
 #     Brew     #
 ################
 brew "awscli"           # Official Amazon AWS command-line interface
-brew "bash-completion"  # Programmable completion for Bash 3.2
+brew "azure-cli"        # Official Azure command-line interface
 brew "fdupes"           # Identify or delete duplicate files
 brew "git"              # Distributed revision control system
 brew "glances"          # Alternative to top/htop
@@ -36,18 +36,16 @@ cask "alfred"
 cask "cron"
 cask "docker"
 cask "firefox"
-cask "okta-advanced-server-access"
 cask "google-chrome"
-cask "iterm2"
-cask "jetbrains-toolbox"
+cask "insomnia"
+cask "loom"
 cask "messenger"
-cask "notion"
+# cask "notion"
 cask "slack"
 cask "spotify"
 cask "visual-studio-code"
-cask "zoomus"
-cask "font-fira-code"
-cask "zsh-window-title"
+cask "warp"
+cask "zoom"
 
 ################
 #     Mas      #
