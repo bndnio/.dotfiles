@@ -3,7 +3,7 @@ eval "$(ssh-agent -s)"
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
 # Link .zshrc here for user
-ln -s .zshrc ~/.zshrc
+ln -s "$(eval pwd)/.zshrc" ~/.zshrc
 
 # Install Brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
