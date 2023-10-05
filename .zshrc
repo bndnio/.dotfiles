@@ -28,9 +28,8 @@ function fix-xcode-command-line-tools () "sudo xcode-select --install"
 
 # ---------------- NVM CONFIG -----------------
 export NVM_DIR="$HOME/.nvm"
-[ -s /usr/local/opt/nvm/nvm.sh ] && . /usr/local/opt/nvm/nvm.sh  # This loads nvm
-[ -s /usr/local/opt/nvm/etc/bash_completion.d/nvm ] && . /usr/local/opt/nvm/etc/bash_completion.d/nvm  # This loads nvm bash_completion
-
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 # ---------------- PYENV CONFIG ---------------
 # -- CORE --
 export PYENV_ROOT="$HOME/.pyenv"
@@ -50,3 +49,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Activate nice zsh window title
 source /opt/homebrew/share/zsh-window-title/zsh-window-title.zsh
+
+# Associate mysql 8 with mysql command
+export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
