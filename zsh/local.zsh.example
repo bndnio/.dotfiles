@@ -1,0 +1,4 @@
+# Copy to local.zsh for machine-specific overrides (gitignored).
+# Examples:
+# export PATH="$HOME/.bun/bin:$PATH"
+# export NOTES_MCP_TOKEN="..."

@@ -90,3 +90,6 @@ zsdoc/data
 !/tests/_output/.gitkeep
 
 # End of https://www.toptal.com/developers/gitignore/api/zsh,macos,visualstudiocode
+
+# Machine-local zsh overrides (secrets, bun, etc.)
+zsh/local.zsh
