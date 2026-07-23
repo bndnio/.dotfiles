@@ -19,7 +19,7 @@ brew "gh"               # GitHub command-line tool
 brew "git"              # Distributed revision control system
 brew "glances"          # Alternative to top/htop
 brew "mas"              # Mac App Store command-line interface
-brew "nvm"              # Node Version Manager -- manage node versions
+brew "fnm"              # Fast Node.js version manager
 brew "pv"               # Pipe Viewer -- Monitor data's progress through a pipe
 brew "uv"               # Extremely fast Python package & project manager
 brew "tcptraceroute"    # Traceroute implementation using TCP packets

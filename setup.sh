@@ -17,8 +17,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/mas
 # Install Brew Apps (from Brewfile)
 brew bundle
 
-## Config nvm
-mkdir ~/.nvm
+## Config fnm
+fnm install --lts
+fnm default lts-latest
 
 ## Config uv
 uv python install 3.12 --default

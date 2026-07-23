@@ -26,10 +26,10 @@ alias ll="ls -l"
 alias lla="ls -la"
 function fix-xcode-command-line-tools () "sudo xcode-select --install"
 
-# ---------------- NVM CONFIG -----------------
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# ---------------- FNM CONFIG -----------------
+if command -v fnm 1>/dev/null 2>&1; then
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
 # ---------------- UV CONFIG ------------------
 if command -v uv 1>/dev/null 2>&1; then
   eval "$(uv generate-shell-completion zsh)"
