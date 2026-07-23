@@ -6,21 +6,10 @@
 # ---------------- ENV VARS -------------------
 # Language environment
 export LANG=en_CA.UTF-8
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ---------------- ALIASES --------------------
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+# plugins, and themes. For a full list of active aliases, run `alias`.
 alias zshconfig="code $HOME/.zshrc"
 alias ll="ls -l"
 alias lla="ls -la"
@@ -38,12 +27,4 @@ fi
 # ---------------- THEFUCK CONFIG -------------
 eval $(thefuck --alias fuck)
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # ---------------- EXTRA SCRIPTS --------------
-
-# Activate nice zsh window title
-source /opt/homebrew/share/zsh-window-title/zsh-window-title.zsh
-
-# Associate mysql 8 with mysql command
-export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
