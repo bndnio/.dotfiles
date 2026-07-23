@@ -20,9 +20,8 @@ brew bundle
 ## Config nvm
 mkdir ~/.nvm
 
-## Config pyenv
-pyenv install 3.10.5
-pyenv global 3.10.5
+## Config uv
+uv python install 3.12 --default
 
 # Start apps that need manual config
 APPS="/Applications"
