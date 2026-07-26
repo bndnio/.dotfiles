@@ -91,5 +91,6 @@ zsdoc/data
 
 # End of https://www.toptal.com/developers/gitignore/api/zsh,macos,visualstudiocode
 
-# Machine-local zsh overrides (secrets, bun, etc.)
+# Machine-local overrides (secrets, bun, host-specific SSH, etc.)
 zsh/local.zsh
+ssh/config.local

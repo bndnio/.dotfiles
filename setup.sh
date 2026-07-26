@@ -139,12 +139,28 @@ fi
 # Dotfile links            #
 ############################
 log "Linking dotfiles"
+mkdir -p "$HOME/.ssh"
+chmod 700 "$HOME/.ssh" 2>/dev/null || true
+
 link_dotfile ".zshrc" "$HOME/.zshrc"
 link_dotfile "git/gitconfig" "$HOME/.gitconfig"
+link_dotfile "ssh/config" "$HOME/.ssh/config"
+chmod 600 "$HOME/.ssh/config" 2>/dev/null || true
 
 if [[ ! -f "$DOTFILES/zsh/local.zsh" && -f "$DOTFILES/zsh/local.zsh.example" ]]; then
   cp "$DOTFILES/zsh/local.zsh.example" "$DOTFILES/zsh/local.zsh"
   log "Created zsh/local.zsh from example — add secrets there"
+fi
+
+if [[ ! -f "$HOME/.ssh/config.local" ]]; then
+  if [[ -f "$DOTFILES/ssh/config.local.example" ]]; then
+    cp "$DOTFILES/ssh/config.local.example" "$HOME/.ssh/config.local"
+    chmod 600 "$HOME/.ssh/config.local"
+    log "Created ~/.ssh/config.local from example"
+  else
+    touch "$HOME/.ssh/config.local"
+    chmod 600 "$HOME/.ssh/config.local"
+  fi
 fi
 
 ############################
@@ -212,7 +228,6 @@ if have uv; then
 else
   warn "uv not installed"
 fi
-
 
 ############################
 # macOS defaults           #

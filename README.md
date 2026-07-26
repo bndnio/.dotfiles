@@ -52,8 +52,8 @@ Trackpad prefs (tap to click, faster tracking, three-finger drag) are applied by
 ## What `setup.sh` does
 - Ensures **Xcode Command Line Tools**
 - Installs **Oh My Zsh** if missing (`robbyrussell` theme, `git` plugin)
-- Symlinks `~/.zshrc` and `~/.gitconfig` from this repo (backs up non-symlinks once)
-- Creates `zsh/local.zsh` from the example if missing
+- Symlinks `~/.zshrc`, `~/.gitconfig`, and `~/.ssh/config` from this repo (backs up non-symlinks once)
+- Creates `zsh/local.zsh` and `~/.ssh/config.local` from examples if missing
 - Installs **Homebrew** if missing; appends `brew shellenv` to `~/.zprofile` **once**
 - Trusts `timescam/tap` when needed (for `pay-respects`)
 - Runs `brew bundle` against `Brewfile`
@@ -70,6 +70,9 @@ Brewfile               # formulae, casks, mas apps, VS Code extensions
 git/gitconfig          # user identity + SSH commit signing
 macos/defaults.sh      # trackpad / system preference tweaks
 setup.sh               # idempotent bootstrap
+ssh/
+  config               # shared SSH config (linked to ~/.ssh/config)
+  config.local.example # template for host-specific overrides
 zsh/
   load.zsh             # OMZ entrypoint → config/, tools/, local.zsh
   config/              # env, aliases
@@ -95,3 +98,4 @@ sed -n 's/^vscode "\([^"]*\)".*/\1/p' Brewfile | xargs -L1 cursor --install-exte
 - `pay-respects` is aliased to `fuck`
 - Git uses **SSH commit signing**; `setup.sh` will create `~/.ssh/allowed_signers` from your pubkey if missing
 - Work-specific git config can live in `~/.gitconfig-dopa` (included for `~/Code/Dopa/`)
+- SSH: shared `ssh/config` + per-machine `~/.ssh/config.local` (via `Include`). Private keys stay out of the repo.

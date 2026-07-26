@@ -1,0 +1,12 @@
+# Shared SSH config (no private keys). Linked to ~/.ssh/config by setup.sh.
+# Machine-specific hosts go in ~/.ssh/config.local (gitignored example in repo).
+
+Include config.local
+
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+  UseKeychain yes

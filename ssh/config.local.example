@@ -1,0 +1,7 @@
+# Copied to ~/.ssh/config.local on first setup if missing (not tracked).
+# Add machine-specific Host blocks here.
+#
+# Host work
+#   HostName git.example.com
+#   IdentityFile ~/.ssh/id_ed25519_work
+#   IdentitiesOnly yes
