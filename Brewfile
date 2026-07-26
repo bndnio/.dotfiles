@@ -1,12 +1,7 @@
 ################
 #     Taps     #
 ################
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
-tap "homebrew/cask-fonts"
-tap "olets/tap"
+tap "timescam/tap"       # pay-respects (not in homebrew-core)
 
 ################
 #     Brew     #
@@ -15,15 +10,16 @@ brew "awscli"           # Official Amazon AWS command-line interface
 brew "azure-cli"        # Official Azure command-line interface
 brew "cocoapods"        # Dependency manager for Cocoa projects
 brew "fdupes"           # Identify or delete duplicate files
+brew "fnm"              # Fast Node.js version manager
 brew "gh"               # GitHub command-line tool
 brew "git"              # Distributed revision control system
 brew "glances"          # Alternative to top/htop
 brew "mas"              # Mac App Store command-line interface
-brew "fnm"              # Fast Node.js version manager
+brew "timescam/tap/pay-respects" # Fast thefuck alternative (command correction)
 brew "pv"               # Pipe Viewer -- Monitor data's progress through a pipe
-brew "uv"               # Extremely fast Python package & project manager
+brew "ripgrep"          # Fast search tool (rg)
 brew "tcptraceroute"    # Traceroute implementation using TCP packets
-brew "thefuck"          # Programatically correct mistyped console commands
+brew "uv"               # Extremely fast Python package & project manager
 brew "watch"            # Executes a program periodically, showing output fullscreen
 brew "wget"             # Internet file retriever
 

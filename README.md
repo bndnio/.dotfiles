@@ -20,7 +20,7 @@
 * `.zshrc` — Oh My Zsh bootstrap only
 * `zsh/load.zsh` — loads the folders below (OMZ only auto-sources top-level `*.zsh`)
 * `zsh/config/` — env, aliases
-* `zsh/tools/` — fnm, uv, thefuck, …
+* `zsh/tools/` — fnm, uv, pay-respects, …
 * `zsh/local.zsh` — machine-specific overrides (gitignored; copy from `local.zsh.example`)
 
 ## After running setup.sh
