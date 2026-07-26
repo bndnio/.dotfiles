@@ -2,6 +2,7 @@
 # Idempotent machine bootstrap for this dotfiles repo.
 # Safe to re-run.
 #   SKIP_OPEN_APPS=1 ./setup.sh
+#   SKIP_MACOS_DEFAULTS=1 ./setup.sh
 set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
@@ -210,6 +211,16 @@ if have uv; then
   uv python install 3.12 --default
 else
   warn "uv not installed"
+fi
+
+
+############################
+# macOS defaults           #
+############################
+if [[ "${SKIP_MACOS_DEFAULTS:-0}" != "1" ]]; then
+  bash "$DOTFILES/macos/defaults.sh"
+else
+  log "Skipping macOS defaults (SKIP_MACOS_DEFAULTS=1)"
 fi
 
 ############################

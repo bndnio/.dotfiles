@@ -4,12 +4,7 @@ macOS bootstrap: Homebrew apps, Oh My Zsh, git config, and shell config. Safe to
 
 ## New machine
 
-### 1. Manual device settings
-- Trackpad → enable **Tap to Click**
-- Trackpad → raise pointer speed
-- Accessibility → Pointer Control → Trackpad Options → enable dragging with **Three Finger Drag**
-
-### 2. Prerequisites
+### 1. Prerequisites
 1. Install / finish **Xcode Command Line Tools** if prompted (or let `setup.sh` start it).
 2. Create an SSH key (can do before or after clone):
    ```sh
@@ -26,7 +21,7 @@ macOS bootstrap: Homebrew apps, Oh My Zsh, git config, and shell config. Safe to
    ```
 4. Sign into the **Mac App Store** (needed for `mas` apps: Bear, Things, djay Pro).
 
-### 3. Run setup
+### 2. Run setup
 ```sh
 ./setup.sh
 ```
@@ -36,12 +31,18 @@ Idempotent — safe to re-run.
 | Flag | Effect |
 |------|--------|
 | `SKIP_OPEN_APPS=1` | Don’t launch Ghostty / 1Password / Docker / Cursor |
+| `SKIP_MACOS_DEFAULTS=1` | Don’t apply trackpad defaults |
 
 ```sh
-SKIP_OPEN_APPS=1 ./setup.sh
+SKIP_OPEN_APPS=1 SKIP_MACOS_DEFAULTS=1 ./setup.sh
 ```
 
-### 4. After setup checklist
+Trackpad prefs (tap to click, faster tracking, three-finger drag) are applied by `macos/defaults.sh`. Re-run just that with:
+```sh
+./macos/defaults.sh
+```
+
+### 3. After setup checklist
 - [Add your public SSH key to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 - Put secrets and machine-only PATH tweaks in `zsh/local.zsh` (gitignored; created from the example on first run)
 - If Cursor extensions were skipped: Cursor → Command Palette → **Shell Command: Install 'cursor' command in PATH**, then re-run `./setup.sh`
@@ -58,6 +59,7 @@ SKIP_OPEN_APPS=1 ./setup.sh
 - Runs `brew bundle` against `Brewfile`
 - Installs Brewfile `vscode "..."` extensions into **Cursor** (PATH or app bundle binary)
 - Ensures **fnm** Node LTS and **uv** Python 3.12
+- Applies **macOS trackpad defaults** (`macos/defaults.sh`)
 - Opens first-run apps unless already running / skipped
 
 ## Layout
@@ -66,6 +68,7 @@ SKIP_OPEN_APPS=1 ./setup.sh
 .zshrc                 # Oh My Zsh bootstrap (theme, plugins, ZSH_CUSTOM)
 Brewfile               # formulae, casks, mas apps, VS Code extensions
 git/gitconfig          # user identity + SSH commit signing
+macos/defaults.sh      # trackpad / system preference tweaks
 setup.sh               # idempotent bootstrap
 zsh/
   load.zsh             # OMZ entrypoint → config/, tools/, local.zsh
