@@ -8,14 +8,16 @@
 ## Pre-Requisites for running setup.sh
 * [Create an ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) using `ssh-keygen -t ed25519 -C "your_email@example.com"`
 * Clone the .dotfiles repo into your home directory: `git clone https://github.com/bndnio/.dotfiles.git ~/.dotfiles`
-* run `chmod 744 setup.sh` in the repo to allow execution
+* Run `./setup.sh` from the repo (idempotent — safe to re-run)
+* Optional: `SKIP_OPEN_APPS=1 ./setup.sh` to skip launching 1Password/Docker/Ghostty/Cursor
 
 ## What setup.sh configures
-* Oh My Zsh (`robbyrussell` theme, `git` plugin)
-* Symlinks `~/.zshrc` → this repo's `.zshrc` (loads `zsh/*.zsh`)
-* Homebrew + Brewfile apps
+* Oh My Zsh (`robbyrussell` theme, `git` plugin) — installs only if missing
+* Symlinks `~/.zshrc` → this repo's `.zshrc`
+* Homebrew (installs only if missing) + Brewfile apps via `brew bundle`
 * Brewfile `vscode` extensions installed into Cursor via `cursor --install-extension`
-* fnm (Node LTS) + uv (Python)
+* fnm (Node LTS) + uv (Python 3.12)
+* Does **not** install Mac-CLI anymore
 
 ## Shell layout
 * `.zshrc` — Oh My Zsh bootstrap only
@@ -27,3 +29,12 @@
 ## After running setup.sh
 * [Add public ssh key to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 * Edit `zsh/local.zsh` for secrets / one-off PATH entries (bun, tokens, etc.)
+
+## Testing setup.sh (sandbox)
+Docker isn’t required. This runs `setup.sh` twice in a fake `$HOME` with stubbed `curl`/Homebrew/`fnm`/`uv`/`cursor`:
+
+```sh
+./test/sandbox/run.sh
+```
+
+It asserts a fresh install path and idempotent re-run (e.g. brew `shellenv` only written once).
