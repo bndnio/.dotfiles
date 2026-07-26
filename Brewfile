@@ -30,6 +30,7 @@ cask "1password"
 cask "affinity"         # Affinity Designer/Photo/Publisher (no longer on Mac App Store)
 cask "claude"
 cask "codex"
+cask "cursor"
 cask "docker-desktop"
 cask "figma"
 cask "firefox"

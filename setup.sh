@@ -36,6 +36,17 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/mas
 # Install Brew Apps (from Brewfile)
 brew bundle --file="$DOTFILES/Brewfile"
 
+# Install Brewfile vscode extensions into Cursor as well
+# (brew bundle only targets VS Code; Cursor needs the CLI)
+if command -v cursor >/dev/null 2>&1; then
+  while read -r ext; do
+    cursor --install-extension "$ext"
+  done < <(sed -n 's/^vscode "\([^"]*\)".*/\1/p' "$DOTFILES/Brewfile")
+else
+  echo "cursor CLI not on PATH — open Cursor and run: Shell Command: Install 'cursor' command in PATH"
+  echo "Then re-run: sed -n 's/^vscode \"\\([^\"]*\\)\".*/\\1/p' \"$DOTFILES/Brewfile\" | xargs -L1 cursor --install-extension"
+fi
+
 ## Config fnm
 fnm install --lts
 fnm default lts-latest

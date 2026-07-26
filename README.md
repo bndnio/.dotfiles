@@ -14,6 +14,7 @@
 * Oh My Zsh (`robbyrussell` theme, `git` plugin)
 * Symlinks `~/.zshrc` → this repo's `.zshrc` (loads `zsh/*.zsh`)
 * Homebrew + Brewfile apps
+* Brewfile `vscode` extensions installed into Cursor via `cursor --install-extension`
 * fnm (Node LTS) + uv (Python)
 
 ## Shell layout
